@@ -1,0 +1,120 @@
+Based on the provided documentation and examples for using TanStack Query with React, here are some key points to handle form submissions, queries, mutations, and query invalidation:
+
+### Handling Form Submissions
+For handling form submissions, it's recommended to wrap `useMutation` in an `onSubmit` handler. This approach avoids issues related to React event pooling.
+```tsx
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+} from '@tanstack/react-query';
+import { postTodo } from '../my-api';
+
+const CreateTodo = () => {
+  const mutation = useMutation(
+    {
+      mutationFn: (formData) => {
+        return fetch('/api', formData);
+      },
+    }
+  );
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    mutation.mutate(new FormData(event.target));
+  };
+
+  return <form onSubmit={onSubmit}>...</form>;
+};
+```
+
+### Using Queries and Mutations
+To use queries and mutations effectively, you can configure a `QueryClient` and provide it to your application. Here’s an example setup:
+```tsx
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { getTodos, postTodo } from '../my-api';
+
+// Create a client
+const queryClient = new QueryClient();
+
+function App() {
+  return (
+    // Provide the client to your App
+    <QueryClientProvider client={queryClient}>
+      <Todos />
+    </QueryClientProvider>
+  );
+}
+
+function Todos() {
+  const queryClient = useQueryClient();
+
+  // Queries
+  const query = useQuery({ queryKey: ['todos'], queryFn: getTodos });
+
+  // Mutations
+  const mutation = useMutation(
+    { mutationFn: postTodo, onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['todos'] });
+    } },
+  );
+
+  return (
+    <div>
+      <ul>
+        {query.data?.map((todo) => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+
+      <button
+        onClick={() => {
+          mutation.mutate({
+            id: Date.now(),
+            title: 'Do Laundry',
+          });
+        }}
+      >Add Todo</button>
+    </div>
+  );
+}
+```
+
+### Installation
+To install `@tanstack/react-query` using npm, run the following command:
+```bash
+npm i @tanstack/react-query
+```
+
+### Router Setup with React Query Provider
+For integrating with routers like `react-router-dom`, you can wrap your router provider inside a `QueryClientProvider`.
+```typescript
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 10,
+    },
+  },
+});
+
+const router = createBrowserRouter([/*...*/]);
+
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Missing #root element');
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools buttonPosition="bottom-right" />
+    </QueryClientProvider>,
+  </React.StrictMode>,
+);
+```

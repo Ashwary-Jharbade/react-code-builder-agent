@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "runId": "7ddd0a27-6185-4aa7-8ef0-493974923660",
+  "mode": "update",
+  "phase": "planning",
+  "startedAt": "2026-10-03T17:40:40.891Z",
+  "language": "en",
+  "languageChanged": false,
+  "requiredRewritePages": [],
+  "initialPages": [],
+  "sourceFingerprint": "sha256:d8b93ae99b45e071a80e06c7d391fb31847165f573061be98a6a86b53de6da61",
+  "actor": {
+    "producerActor": "openwiki/0.7.0",
+    "metadataModel": "ollama:qwen2.5:7b"
+  },
+  "previousLastUpdate": null,
+  "wikiGoal": "A code wiki for this repository.",
+  "beforeContentSnapshot": "632cf2073a36a4ef01dcd33b2a7a2d55b75afc69f961e55e70fa14a5e236f881",
+  "preparedWiki": {
+    "generatedProvenance": []
+  }
+}
