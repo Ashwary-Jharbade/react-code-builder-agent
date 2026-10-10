@@ -1,7 +1,0 @@
-{
-  "updatedAt": "2026-10-03T17:40:40.893Z",
-  "command": "update",
-  "model": "ollama:qwen2.5:7b",
-  "status": "interrupted",
-  "language": "en"
-}

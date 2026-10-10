@@ -19,3 +19,10 @@ docker build --no-cache -t agent .
 
 ## To run via docker
 docker run --rm -p 8123:8123 agent
+
+
+## Connect openwiki with local modal
+export OPENWIKI_PROVIDER=openai-compatible
+export OPENWIKI_MODEL_ID="llama3.2"
+export OPENAI_COMPATIBLE_BASE_URL="http://localhost:11434/v1"
+export OPENAI_COMPATIBLE_API_KEY="ollama"
