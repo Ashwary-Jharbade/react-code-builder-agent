@@ -18,6 +18,72 @@
       "sourceType": "local",
       "skillPath": "/skills/react-file-operations/SKILL.md",
       "computedHash": "some-hash-value"
+    },
+    "workspace-orientation": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/workspace-orientation/SKILL.md",
+      "computedHash": "local-workspace-orientation"
+    },
+    "code-review": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/code-review/SKILL.md",
+      "computedHash": "local-code-review"
+    },
+    "codebase-search": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/codebase-search/SKILL.md",
+      "computedHash": "local-codebase-search"
+    },
+    "coding-task-planning": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/coding-task-planning/SKILL.md",
+      "computedHash": "local-coding-task-planning"
+    },
+    "debugging": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/debugging/SKILL.md",
+      "computedHash": "local-debugging"
+    },
+    "implementation": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/implementation/SKILL.md",
+      "computedHash": "local-implementation"
+    },
+    "project-context": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/project-context/SKILL.md",
+      "computedHash": "local-project-context"
+    },
+    "repository-navigation": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/repository-navigation/SKILL.md",
+      "computedHash": "local-repository-navigation"
+    },
+    "requirement-analysis": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/requirement-analysis/SKILL.md",
+      "computedHash": "local-requirement-analysis"
+    },
+    "testing": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/testing/SKILL.md",
+      "computedHash": "local-testing"
+    },
+    "verification": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "/skills/verification/SKILL.md",
+      "computedHash": "local-verification"
     }
   }
 }
