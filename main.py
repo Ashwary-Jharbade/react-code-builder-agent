@@ -61,30 +61,18 @@ backend = FilesystemBackend(
 
 mcp_client = MultiServerMCPClient(
     {
-        # "context7": {
-        #     "transport": "http",
-        #     "url": "https://mcp.context7.com/mcp",
-        #     "headers": {
-        #         "Authorization": f"Bearer {CONTEXT7_API_KEY}",
-        #     },
-        # },
-        # "filesystem": {
-        #     "transport": "stdio",
-        #     "command": "npx",
-        #     "args": [
-        #         "-y",
-        #         "@modelcontextprotocol/server-filesystem",
-        #         "/Users/ashwaryjharbade/Projects/pageAnalysisAgent/workspace-container",
-        #     ]
-        # }
+        "context7": {
+            "transport": "http",
+            "url": "https://mcp.context7.com/mcp",
+            "headers": {
+                "Authorization": f"Bearer {CONTEXT7_API_KEY}",
+            },
+        },
     }
 )
 
 async def get_tools():
     tools = await mcp_client.get_tools()
-    for tool in tools:
-        print(tool.name)
-        print(tool.description)
     return tools
 
 async def build_agent():
@@ -112,9 +100,6 @@ async def build_agent():
             )
         ],
         skills=["/skills/"],
-        # interrupt_on={
-        #     "fetch_file": { "allowed_decisions": ["approve", "reject"] }
-        # }
     )
 
 graph = asyncio.run(build_agent())
