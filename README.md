@@ -26,3 +26,6 @@ export OPENWIKI_PROVIDER=openai-compatible
 export OPENWIKI_MODEL_ID="llama3.2"
 export OPENAI_COMPATIBLE_BASE_URL="http://localhost:11434/v1"
 export OPENAI_COMPATIBLE_API_KEY="ollama"
+
+Local Skill Call
+<img width="1280" height="660" alt="Screenshot 2026-10-14 at 11 57 30 PM" src="https://github.com/user-attachments/assets/ddf789c7-c0d7-4c86-bcac-703be3df278d" />
